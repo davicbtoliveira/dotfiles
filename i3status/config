@@ -1,0 +1,39 @@
+general {
+	interval = 1
+    	colors = true
+    	color_good = '#88b090'
+    	color_degraded = '#ccdc90'
+    	color_bad = '#e89393'
+}
+
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "memory"
+order += "disk /home"
+order += "tztime local"
+
+cpu_temperature 0 {
+    format = "  %degrees°C"
+    path = /sys/class/hwmon/hwmon0/temp1_input
+}
+
+cpu_usage {
+    format = "  %usage"
+
+}
+
+tztime local {
+    format = "  %d-%m-%Y  |  %H:%M"
+}
+
+memory {
+    format = "  %used/%total"
+
+}
+
+disk "/home" {
+	format = "  %free free"
+	prefix_type = decimal
+	low_threshold = 20
+	threshold_type = percentage_avail
+}
