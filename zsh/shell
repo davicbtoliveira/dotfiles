@@ -1,0 +1,13 @@
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=$HISTSIZE
+
+# Set complete path
+export PATH="./bin:$HOME/.local/bin:$PATH"
+set +h
+
+# completion
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
+bindkey -e

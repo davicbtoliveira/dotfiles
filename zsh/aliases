@@ -1,0 +1,2 @@
+# Configuring the shell aliases 
+alias pg='nvim ~/dev/playground/'
