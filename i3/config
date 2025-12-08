@@ -204,7 +204,6 @@ bar {
 }
 
 # Window borders 
-new_window pixel 1
 client.focused   #1C1C1C #0D0D0D #707070 #1C1C1C #707070
 client.unfocused #0F0F0F #050505 #404040 #0F0F0F #404040
 client.urgent    #5C1A1A #0D0D0D #707070 #5C1A1A #707070
@@ -215,7 +214,7 @@ gaps inner 5
 gaps outer 5
 
 # Screenshot configuration
-bindsym Shift+Print exec maim -s -u | xclip -selection clipboard -t image/png -i
+bindsym Ctrl+Print exec maim -s -u | xclip -selection clipboard -t image/png -i
 
 # for_window [class=".*"] border pixel 
 for_window [class=".*"] border normal 2
